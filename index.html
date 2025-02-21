@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <!-- 禁用缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 禁用缓存 -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; "> -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+
+    <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#222222" />
+    <title>VITE_APP</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <style>
+        @keyframes fade-in {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 100;
+          }
+        }
+      </style>
+      <style>
+        .line-rotation-spinner {
+          position: relative;
+        }
+        .loader {
+          position: relative;
+          width: 2.5em;
+          height: 2.5em;
+          transform: rotate(165deg);
+        }
+
+        .loader:before,
+        .loader:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: block;
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 0.25em;
+          transform: translate(-50%, -50%);
+        }
+
+        .loader:before {
+          animation: before8 var(--duration) infinite ease-in-out;
+        }
+
+        .loader:after {
+          animation: after6 var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes before8 {
+          0% {
+            width: 0.5em;
+            box-shadow:
+              1em -0.5em var(--color-1),
+              -1em 0.5em var(--color-2);
+          }
+
+          35% {
+            width: 2.5em;
+            box-shadow:
+              0 -0.5em var(--color-1),
+              0 0.5em var(--color-2);
+          }
+
+          70% {
+            width: 0.5em;
+            box-shadow:
+              -1em -0.5em var(--color-1),
+              1em 0.5em var(--color-2);
+          }
+
+          100% {
+            box-shadow:
+              1em -0.5em var(--color-1),
+              -1em 0.5em var(--color-2);
+          }
+        }
+
+        @keyframes after6 {
+          0% {
+            height: 0.5em;
+            box-shadow:
+              0.5em 1em var(--color-3),
+              -0.5em -1em var(--color-4);
+          }
+
+          35% {
+            height: 2.5em;
+            box-shadow:
+              0.5em 0 var(--color-3),
+              -0.5em 0 var(--color-4);
+          }
+
+          70% {
+            height: 0.5em;
+            box-shadow:
+              0.5em -1em var(--color-3),
+              -0.5em 1em var(--color-4);
+          }
+
+          100% {
+            box-shadow:
+              0.5em 1em var(--color-3),
+              -0.5em -1em var(--color-4);
+          }
+        }
+      </style>
+      <div
+        style="
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          inset: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          animation: fade-in 0.3s ease-in;
+          z-index: 99999999999999;
+        "
+      >
+        <div
+          class="line-rotation-spinner"
+          style="
+            --color-1: rgba(225, 20, 98, 0.75);
+            --color-2: rgba(111, 202, 220, 0.75);
+            --color-3: rgba(61, 184, 143, 0.75);
+            --color-4: rgba(233, 169, 32, 0.75);
+            --duration: 2s;
+          "
+        >
+          <div class="loader" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <noscript>This website requires JavaScript to function properly. Please enable JavaScript to continue.</noscript>
+  </body>
+</html>
