@@ -23,7 +23,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 import svgLoader from 'vite-svg-loader'
-import { VitePluginAutoImport, VitePluginComponents, VitePluginI18n, VitePluginMarkdown, VitePluginPWA } from './config'
+import { VitePluginAutoImport, VitePluginComponents, VitePluginElectron, VitePluginI18n, VitePluginMarkdown } from './config'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const { VITE_DEV_PORT, VITE_API_BASE_PREFIX, VITE_API_BASE_URL, VITE_BASE } = loadEnv(mode, process.cwd(), '')
@@ -41,7 +41,9 @@ export default defineConfig(({ command, mode }) => {
       Unocss(), // https://github.com/antfu/unocss
       Icons({ compiler: 'vue3' }), // https://github.com/antfu/unplugin-icons
       Layouts(), // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-      VueDevTools(), // https://devtools-next.vuejs.org/
+      VueDevTools({
+        appendTo: 'src/main.ts',
+      }), // https://devtools-next.vuejs.org/
       ServerUrlCopy({
         qrcode: {
           disabled: false,
@@ -95,9 +97,9 @@ export default defineConfig(({ command, mode }) => {
       ...VitePluginComponents(),
       ...VitePluginI18n(),
       ...VitePluginMarkdown(),
-      ...VitePluginPWA({ command, mode }),
+      ...VitePluginElectron({ command, mode }),
     ],
-    clearScreen: true,
+    clearScreen: false,
     base: VITE_BASE ?? '/',
     server: {
       port: Number(VITE_DEV_PORT),
@@ -130,6 +132,10 @@ export default defineConfig(({ command, mode }) => {
       },
       assetsDir: 'static/assets',
       rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'index.html'),
+          loading: resolve(__dirname, 'loading.html'),
+        },
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',

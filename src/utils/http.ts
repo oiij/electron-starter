@@ -6,6 +6,7 @@ import type {
   InternalAxiosRequestConfig,
 } from 'axios'
 import axios from 'axios'
+import { electronFetchAdapter } from 'electron-plugin-fetch'
 import NProgress from 'nprogress'
 
 const BASE_PREFIX = import.meta.env.VITE_API_BASE_PREFIX
@@ -15,6 +16,7 @@ const axiosInstance: AxiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  adapter: electronFetchAdapter,
 })
 const isDev = import.meta.env.DEV
 axiosInstance.interceptors.request.use(

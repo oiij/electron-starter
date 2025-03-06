@@ -6,7 +6,7 @@ const { collapsed } = storeToRefs(useAppStore())
 const { toggleCollapsed } = useAppStore()
 const { naiveMenu, currentPath, setPath } = useAutoRouter()
 function renderLabel(option: MenuOption | MenuGroupOption) {
-  return t(`GLOBAL.MENU.${option.label}`)
+  return t(`${option.label}`)
 }
 </script>
 

@@ -5,7 +5,7 @@ defineOptions({
 definePage({
   meta: {
     layout: 'default',
-    title: 'HOME',
+    title: 'GLOBAL.MENU.HOME',
     requireAuth: true,
     keepAlive: true,
     icon: 'i-mage-home',

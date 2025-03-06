@@ -1,9 +1,15 @@
 <script setup lang='ts'>
+import type { Push } from 'notivue'
 import { Notifications, Notivue, push } from 'notivue'
 
 onMounted(() => {
   window.$notivue = push
 })
+declare global {
+  interface Window {
+    $notivue: Push
+  }
+}
 </script>
 
 <template>

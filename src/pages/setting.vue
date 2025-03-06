@@ -9,7 +9,7 @@ defineOptions({
 definePage({
   meta: {
     layout: 'default',
-    title: 'SETTING',
+    title: 'GLOBAL.MENU.SETTING',
     requireAuth: true,
     keepAlive: true,
     icon: 'i-mage-settings',
