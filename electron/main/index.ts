@@ -1,12 +1,13 @@
-import { createRequire } from 'node:module'
+// import { createRequire } from 'node:module'
 import os from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { registerElectronFetch } from 'electron-plugin-fetch/plugin'
+import { registerWindowHandle } from '../plugin/window'
 
-const _require = createRequire(import.meta.url)
+// const _require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // The built directory structure
@@ -53,6 +54,9 @@ function createMainWindow() {
     title: 'Main window',
     icon: path.join(process.env.VITE_PUBLIC ?? '', 'favicon.ico'),
     show: false,
+    center: true,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: true,
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
@@ -158,3 +162,5 @@ ipcMain.once('loaded', () => {
   mainWin?.show()
 })
 registerElectronFetch()
+
+registerWindowHandle()

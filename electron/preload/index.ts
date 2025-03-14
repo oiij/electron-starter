@@ -1,5 +1,13 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { electronFetchPreloadExpose } from 'electron-plugin-fetch/plugin'
+import { windowExpose } from '../plugin/window'
+
+declare global {
+  interface Window {
+    ipcRenderer?: typeof expose
+    isElectron?: boolean
+  }
+}
 
 const expose = {
   on(...args: Parameters<typeof ipcRenderer.on>) {
@@ -20,14 +28,13 @@ const expose = {
   },
 
   ...electronFetchPreloadExpose,
+  window: windowExpose,
 
-  // You can expose other APTs you need here.
-  // ...
 }
 export type Expose = typeof expose
 // --------- Expose some API to the Renderer process ---------
 contextBridge.exposeInMainWorld('ipcRenderer', expose)
-
+contextBridge.exposeInMainWorld('isElectron', true)
 // --------- Preload scripts loading ---------
 // function domReady(condition: DocumentReadyState[] = ['complete', 'interactive']) {
 //   return new Promise((resolve) => {

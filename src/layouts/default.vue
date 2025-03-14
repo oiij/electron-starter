@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { MenuGroupOption, MenuOption } from 'naive-ui'
 
+const isElectron = window.isElectron
 const { t } = useI18n()
 const { collapsed } = storeToRefs(useAppStore())
 const { toggleCollapsed } = useAppStore()
@@ -12,6 +13,7 @@ function renderLabel(option: MenuOption | MenuGroupOption) {
 
 <template>
   <div class="wh-full flex-col">
+    <AppBar v-if="isElectron" />
     <n-layout has-sider class="min-h-0 flex-1">
       <n-layout-sider
         :width="160"
