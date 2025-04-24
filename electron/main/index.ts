@@ -5,7 +5,7 @@ import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { registerElectronFetch } from 'electron-plugin-fetch/plugin'
-import { registerWindowHandle } from '../plugin/window'
+import { createLocalServer, registerWindowHandle } from '../plugin'
 
 // const _require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -164,3 +164,5 @@ ipcMain.once('loaded', () => {
 registerElectronFetch()
 
 registerWindowHandle()
+
+createLocalServer()
