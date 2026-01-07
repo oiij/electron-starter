@@ -1,22 +1,20 @@
 /* eslint-disable no-console */
-import type {
-  AxiosError,
-  AxiosInstance,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
-} from 'axios'
+import type { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
-import { electronFetchAdapter } from 'electron-plugin-fetch'
+import { fetch } from 'electron-plugin-fetch/fetch'
 import NProgress from 'nprogress'
+import { API_BASE_PREFIX } from '../../config'
 
-const BASE_PREFIX = import.meta.env.VITE_API_BASE_PREFIX
-const axiosInstance: AxiosInstance = axios.create({
-  baseURL: BASE_PREFIX,
+export const axiosInstance: AxiosInstance = axios.create({
+  baseURL: API_BASE_PREFIX,
   timeout: 1000 * 30,
   headers: {
     'Content-Type': 'application/json',
   },
-  adapter: electronFetchAdapter,
+  adapter: 'fetch',
+  env: {
+    fetch,
+  },
 })
 const isDev = import.meta.env.DEV
 axiosInstance.interceptors.request.use(

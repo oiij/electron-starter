@@ -1,15 +1,16 @@
 <script setup lang='ts'>
+import Foo from '~/components/Foo'
+
 defineOptions({
 
 })
 definePage({
   meta: {
     layout: 'default',
-    title: 'GLOBAL.MENU.HOME',
+    title: 'HOME',
     requireAuth: true,
     keepAlive: true,
-    icon: 'i-mage-home',
-
+    icon: 'svg:icon-pixel-travel-icon-比基尼',
   },
 })
 useHead({
@@ -19,7 +20,9 @@ useHead({
 
 <template>
   <div class="wh-full flex-col-center gap-10">
-    <h1>首页</h1>
+    Hello!
+    <Foo />
+    <ElectronFetch />
   </div>
 </template>
 

@@ -13,11 +13,14 @@
     "types": [
       "vitest/globals",
       "unplugin-icons/types/vue",
-      "naive-ui/volar",
       "vite-plugin-vue-layouts/client",
       "@intlify/unplugin-vue-i18n/messages",
       "unplugin-vue-router/client",
-      "unplugin-info/client"
+      "unplugin-info/client",
+      "electron-vite/node"
+    ],
+    "plugins": [
+      { "name": "@dxup/unimport" }
     ]
   },
   "include": [

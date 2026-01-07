@@ -1,22 +1,11 @@
 import { oiijPreset } from '@oiij/unocss-preset'
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetTypography,
-  presetWebFonts,
-  presetWind3,
-  transformerAttributifyJsx,
-  transformerCompileClass,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetTypography, presetWebFonts, presetWind3, transformerAttributifyJsx, transformerCompileClass, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { presetAnimateCSS } from 'unocss-preset-animatecss'
 import { presetAnimations } from 'unocss-preset-animations'
 import { presetExtra } from 'unocss-preset-extra'
 import { presetMagicss } from 'unocss-preset-magicss'
 import { presetNaiveUi } from 'unocss-preset-naive-ui'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
-import { presetTailwindMotion } from 'unocss-preset-tailwindcss-motion'
 import presetTheme from 'unocss-preset-theme'
 
 export default defineConfig({
@@ -27,7 +16,7 @@ export default defineConfig({
 
   },
   presets: [
-    presetWind3(),
+    presetWind3 (),
     presetAttributify({}),
     presetIcons({
       scale: 1.2,
@@ -44,6 +33,7 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
+    // presetDaisy(),
     presetExtra(),
     presetScrollbar(),
     oiijPreset(),
@@ -53,9 +43,9 @@ export default defineConfig({
       },
     }),
     presetNaiveUi(),
-    presetTailwindMotion(),
     presetMagicss(),
     presetAnimations(),
+    presetAnimateCSS(),
   ],
   transformers: [
     transformerDirectives(),
