@@ -1,0 +1,18 @@
+export const windowInvokeMap = {
+  GetAllWindows: `window:get-all-windows`,
+  GetCurrentWindow: `window:get-current-window`,
+  MinimizeCurrentWindow: `window:minimize-current-window`,
+  MaximizeCurrentWindow: `window:maximize-current-window`,
+  UnMaximizeCurrentWindow: `window:un-maximize-current-window`,
+  IsMaximizedCurrentWindow: `window:is-maximized-current-window`,
+  ToggleMaximizeCurrentWindow: `window:toggle-maximize-current-window`,
+  CloseCurrentWindow: `window:close-current-window`,
+  HideCurrentWindow: `window:hide-current-window`,
+  ShowCurrentWindow: `window:show-current-window`,
+  SetFullScreenCurrentWindow: `window:set-full-screen-current-window`,
+  UnSetFullScreenCurrentWindow: `window:un-set-full-screen-current-window`,
+  IsFullScreenCurrentWindow: `window:is-full-screen-current-window`,
+  ToggleFullScreenCurrentWindow: `window:toggle-full-screen-current-window`,
+  OpenDevToolsCurrentWindow: `window:open-devtools-current-window`,
+  CloseDevToolsCurrentWindow: `window:close-devtools-current-window`,
+} as const

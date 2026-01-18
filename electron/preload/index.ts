@@ -1,3 +1,4 @@
+/* eslint-disable ts/consistent-type-definitions */
 import type { ElectronAPI } from '@electron-toolkit/preload'
 import type { IpcRendererEvent } from 'electron'
 import process from 'node:process'

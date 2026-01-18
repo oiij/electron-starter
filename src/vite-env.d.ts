@@ -1,3 +1,4 @@
+/* eslint-disable ts/consistent-type-definitions */
 /// <reference types="vite/client" />
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'

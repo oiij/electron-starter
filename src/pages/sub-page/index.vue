@@ -7,22 +7,26 @@ defineOptions({
 definePage({
   meta: {
     layout: 'default',
-    title: 'HOME',
+    title: 'SUB-PAGE',
     requireAuth: true,
     keepAlive: true,
-    icon: 'svg:icon-home',
+    icon: 'i-mage-dots-menu',
+    group: {
+      title: 'SUB',
+      icon: 'i-mage-dashboard-check',
+      rootOnOne: false,
+    },
   },
 })
 useHead({
-  title: '首页',
+  title: 'SUB-PAGE',
 })
 </script>
 
 <template>
   <div class="wh-full flex-col-center gap-10">
-    Hello!
+    Hello! SUB-PAGE
     <Foo />
-    <ElectronFetch />
   </div>
 </template>
 

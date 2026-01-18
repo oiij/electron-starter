@@ -5,15 +5,19 @@ import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { electronPluginFetchRegister } from 'electron-plugin-fetch/main'
 import icon from '../../resources/icon.png?asset'
+import { registerIpcMain } from './ipc-main-register'
 import { createServer } from './server'
 import { createTray } from './tray'
 
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1060,
+    minWidth: 1060,
+    height: 720,
+    minHeight: 720,
     show: false,
+    frame: true,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -58,15 +62,15 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
-  createWindow()
-  createTray()
-
   app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0)
       createWindow()
   })
+
+  createWindow()
+  createTray()
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -82,3 +86,4 @@ app.on('window-all-closed', () => {
 // code. You can also put them in separate files and require them here.
 createServer()
 electronPluginFetchRegister(ipcMain)
+registerIpcMain(ipcMain)
