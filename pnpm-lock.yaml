@@ -21,11 +21,11 @@ importers:
         specifier: ^0.0.16
         version: 0.0.16(@oiij/utils@0.0.6)(vue@3.5.27(typescript@5.9.3))
       '@oiij/naive-ui':
-        specifier: ^0.0.73
-        version: 0.0.73(@oiij/css-render@0.0.8(@css-render/plugin-bem@0.15.14(css-render@0.15.14))(@css-render/vue3-ssr@0.15.14(vue@3.5.27(typescript@5.9.3)))(css-render@0.15.14)(vue@3.5.27(typescript@5.9.3)))(@oiij/markdown-it@0.0.10(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(dompurify@3.3.1)(markdown-it@14.1.0)(vue@3.5.27(typescript@5.9.3)))(@oiij/use@0.0.42(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3)))(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(async-validator@4.2.5)(colord@2.9.3)(es-toolkit@1.44.0)(naive-ui@2.43.2(vue@3.5.27(typescript@5.9.3)))(prismjs@1.30.0)(vue-component-type-helpers@2.2.12)(vue-hooks-plus@2.4.1(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
+        specifier: ^0.0.74
+        version: 0.0.74(@oiij/css-render@0.0.8(@css-render/plugin-bem@0.15.14(css-render@0.15.14))(@css-render/vue3-ssr@0.15.14(vue@3.5.27(typescript@5.9.3)))(css-render@0.15.14)(vue@3.5.27(typescript@5.9.3)))(@oiij/markdown-it@0.0.10(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(dompurify@3.3.1)(markdown-it@14.1.0)(vue@3.5.27(typescript@5.9.3)))(@oiij/use@0.0.43(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3)))(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(async-validator@4.2.5)(colord@2.9.3)(es-toolkit@1.44.0)(naive-ui@2.43.2(vue@3.5.27(typescript@5.9.3)))(prismjs@1.30.0)(vue-component-type-helpers@2.2.12)(vue-hooks-plus@2.4.1(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
       '@oiij/use':
-        specifier: ^0.0.42
-        version: 0.0.42(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
+        specifier: ^0.0.43
+        version: 0.0.43(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
       '@oiij/utils':
         specifier: ^0.0.6
         version: 0.0.6
@@ -51,7 +51,7 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       electron-plugin-fetch:
-        specifier: link:..\..\..\..\AppData\Local\pnpm\global\5\node_modules\electron-plugin-fetch
+        specifier: link:../../../../AppData/Local/pnpm/global/5/node_modules/electron-plugin-fetch
         version: link:../../../../AppData/Local/pnpm/global/5/node_modules/electron-plugin-fetch
       es-toolkit:
         specifier: ^1.44.0
@@ -1721,12 +1721,12 @@ packages:
       markdown-it: ^14.1.0
       vue: ^3.5.26
 
-  '@oiij/naive-ui@0.0.73':
-    resolution: {integrity: sha512-s3pXNNP9et96eHJHNfwZ5kkaIIKx6EmuAE9AWUmgcdRRX7PUQ+B8ZJVnAPd38Y6U9uAgSJEcd8qUQ34DM21ahg==}
+  '@oiij/naive-ui@0.0.74':
+    resolution: {integrity: sha512-MB0tZfgdBUq4a6uReIQ6as1gdig1a4nycII+VP7jLilUxvH5IZCjyuTppBMh4qF3WfuFXsiwEp2VPRfaMrWiaQ==}
     peerDependencies:
       '@oiij/css-render': 0.0.10
-      '@oiij/markdown-it': 0.0.11
-      '@oiij/use': 0.0.42
+      '@oiij/markdown-it': 0.0.12
+      '@oiij/use': 0.0.43
       '@vueuse/core': ^14.1.0
       async-validator: ^4.2.5
       colord: ^2.9.3
@@ -1743,8 +1743,8 @@ packages:
   '@oiij/unocss-preset@0.0.1':
     resolution: {integrity: sha512-SDfFHX/2+Pgau/qq+lCF7f9pzzeQ/yeyrXjvbmviRPKGFxWvWGigcC7XaN7nUFjnQ3C1dVQjoRhHRcWpjFM4XQ==}
 
-  '@oiij/use@0.0.42':
-    resolution: {integrity: sha512-cB1G62AzDae8liAKzfuShC+IVJ76Le6GTJ8TCjvVJ9YdOaU0Wf5AvlevrczzqZLqK4vud3ixXq7Rlvet8u9d+g==}
+  '@oiij/use@0.0.43':
+    resolution: {integrity: sha512-uyj+8r8SsAkW0IYDAP0VJZ7VcHg4sd3dAPBfi5iHfcvIkI4zNTqOAswRq87nvwA6k+w+n4cmeMrSfP8YeshlwQ==}
     peerDependencies:
       '@vueuse/core': ^14.1.0
       vue: ^3.5.27
@@ -8267,7 +8267,7 @@ snapshots:
 
   '@electron/universal@2.0.1':
     dependencies:
-      '@electron/asar': 3.2.18
+      '@electron/asar': 3.4.1
       '@malept/cross-spawn-promise': 2.0.0
       debug: 4.4.3
       dir-compare: 4.2.0
@@ -8841,11 +8841,11 @@ snapshots:
       markdown-it: 14.1.0
       vue: 3.5.27(typescript@5.9.3)
 
-  '@oiij/naive-ui@0.0.73(@oiij/css-render@0.0.8(@css-render/plugin-bem@0.15.14(css-render@0.15.14))(@css-render/vue3-ssr@0.15.14(vue@3.5.27(typescript@5.9.3)))(css-render@0.15.14)(vue@3.5.27(typescript@5.9.3)))(@oiij/markdown-it@0.0.10(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(dompurify@3.3.1)(markdown-it@14.1.0)(vue@3.5.27(typescript@5.9.3)))(@oiij/use@0.0.42(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3)))(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(async-validator@4.2.5)(colord@2.9.3)(es-toolkit@1.44.0)(naive-ui@2.43.2(vue@3.5.27(typescript@5.9.3)))(prismjs@1.30.0)(vue-component-type-helpers@2.2.12)(vue-hooks-plus@2.4.1(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))':
+  '@oiij/naive-ui@0.0.74(@oiij/css-render@0.0.8(@css-render/plugin-bem@0.15.14(css-render@0.15.14))(@css-render/vue3-ssr@0.15.14(vue@3.5.27(typescript@5.9.3)))(css-render@0.15.14)(vue@3.5.27(typescript@5.9.3)))(@oiij/markdown-it@0.0.10(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(dompurify@3.3.1)(markdown-it@14.1.0)(vue@3.5.27(typescript@5.9.3)))(@oiij/use@0.0.43(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3)))(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(async-validator@4.2.5)(colord@2.9.3)(es-toolkit@1.44.0)(naive-ui@2.43.2(vue@3.5.27(typescript@5.9.3)))(prismjs@1.30.0)(vue-component-type-helpers@2.2.12)(vue-hooks-plus@2.4.1(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))':
     dependencies:
       '@oiij/css-render': 0.0.8(@css-render/plugin-bem@0.15.14(css-render@0.15.14))(@css-render/vue3-ssr@0.15.14(vue@3.5.27(typescript@5.9.3)))(css-render@0.15.14)(vue@3.5.27(typescript@5.9.3))
       '@oiij/markdown-it': 0.0.10(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(dompurify@3.3.1)(markdown-it@14.1.0)(vue@3.5.27(typescript@5.9.3))
-      '@oiij/use': 0.0.42(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
+      '@oiij/use': 0.0.43(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))
       '@vueuse/core': 14.1.0(vue@3.5.27(typescript@5.9.3))
       async-validator: 4.2.5
       colord: 2.9.3
@@ -8862,7 +8862,7 @@ snapshots:
     dependencies:
       '@unocss/core': 65.5.0
 
-  '@oiij/use@0.0.42(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))':
+  '@oiij/use@0.0.43(@vueuse/core@14.1.0(vue@3.5.27(typescript@5.9.3)))(vue@3.5.27(typescript@5.9.3))':
     dependencies:
       '@vueuse/core': 14.1.0(vue@3.5.27(typescript@5.9.3))
       vue: 3.5.27(typescript@5.9.3)
