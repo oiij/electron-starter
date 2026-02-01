@@ -1,31 +1,3 @@
 shellEmulator: true
 
 trustPolicy: no-downgrade
-
-overrides:
-  electron-plugin-fetch: link:../../../../AppData/Local/pnpm/global/5/node_modules/electron-plugin-fetch
-ignoredBuiltDependencies:
-  - '@oiij/unocss-preset'
-  - '@oiij/vite-plugin-deploy'
-  - cpu-features
-  - electron-plugin-fetch
-  - electron-winstaller
-  - esbuild
-  - less
-  - simple-git-hooks
-  - ssh2
-onlyBuiltDependencies:
-  - ','
-  - b
-  - c
-  - d
-  - e
-  - electron
-  - i
-  - l
-  - n
-  - o
-  - r
-  - s
-  - t
-  - u
